@@ -26,6 +26,7 @@ stages:
           sudo npm install
           sudo npm install eslint  
           echo "##[group]Kód ellenőrzés"
+          echo "##[command]A kód rendben?"
           sudo npm run test
           echo "##[endgroup]"
         displayName: 'Kód ellenőrzés'
