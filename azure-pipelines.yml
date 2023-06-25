@@ -4,19 +4,28 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- main
+  - main
 
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
-
-- script: |
-    sudo npm install
-    sudo npm install eslint  
-    sudo npm run test
-  displayName: 'npm install and test code'
+stages:
+  - stage: ci_code_check
+    displayName: CI - Kód ellenőrzés
+    condition: eq(variables['Build.Reason'], 'PullRequest')
+    jobs:
+      - job: basic_check
+        displayName: Alap ellenőrzés
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: "18.x"
+            displayName: "Install Node.js"
+          - script: |
+              sudo npm install
+              sudo npm install eslint  
+              
+              echo "##[command]A kód rendben?"
+              sudo npm run test
+              
+            displayName: "Kód ellenőrzés"
