@@ -25,5 +25,7 @@ stages:
       - script: |
           sudo npm install
           sudo npm install eslint  
+          echo "##[group]Kód ellenőrzés"
           sudo npm run test
+          echo "##[endgroup]"
         displayName: 'Kód ellenőrzés'
