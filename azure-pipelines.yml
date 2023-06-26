@@ -27,5 +27,10 @@ stages:
               
               echo "##[command]A kód rendben?"
               sudo npm run test
-              
+              commandresult=$(echo $?)    
+              echo "##[debug]Kód ellenőrzés eredménye: $commandresult"
+              if [[ $commandresult != 0 ]];
+              then
+                echo "##vso[task.complete result=Failed;]A kódban hiba található!"
+              fi
             displayName: "Kód ellenőrzés"
