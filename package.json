@@ -5,6 +5,7 @@
   "scripts": {
     "lint:js": "npx eslint .",
     "lint:ejs": "npx ejslint **/*.ejs",
+    "test": "npx mocha test",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -16,10 +17,13 @@
     "morgan": "~1.10.0"
   },
   "devDependencies": {
+    "chai": "^4.3.10",
     "ejs-lint": "^2.0.0",
     "eslint": "^8.51.0",
     "eslint-plugin-ejs": "^0.0.2",
     "eslint-plugin-ejs-js": "^0.1.0",
-    "eslint-plugin-node": "^11.1.0"
+    "eslint-plugin-node": "^11.1.0",
+    "mocha": "^10.2.0",
+    "supertest": "^6.3.3"
   }
 }
