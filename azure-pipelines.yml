@@ -18,9 +18,10 @@ stages:
         displayName: Kód ellenőrzés
         steps:
           - task: NodeTool@0
+            displayName: "NodeJs 18 telepítés"
             inputs:
               versionSpec: "18.x"
-            displayName: "Install Node.js"
+
           - task: Bash@3
             name: install_dependencies
             displayName: Függőségek teleptése
