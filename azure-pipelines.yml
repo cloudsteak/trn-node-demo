@@ -15,33 +15,34 @@ stages:
     condition: eq(variables['Build.Reason'], 'PullRequest')
     jobs:
       - job: basic_check
-        displayName: Alap ellenőrzés
+        displayName: Kód ellenőrzés
         steps:
           - task: NodeTool@0
             inputs:
               versionSpec: "18.x"
             displayName: "Install Node.js"
-          - script: |
-              ls -l
-              sudo npm install
-                            
-              echo "##[command]A kód rendben?"
-              npm run lint:js
-              commandresult=$(echo $?)    
-              echo "##[debug]Kód ellenőrzés eredménye: $commandresult"
-              if [[ $commandresult != 0 ]];
-              then
-                echo "##vso[task.complete result=Failed;]A kódban hiba található!"
-              fi
+          - task: Bash@3
+            name: install_dependencies
+            displayName: Függőségek teleptése
+            inputs:
+              targetType: "inline"
+              script: |
+                npm upgrade
+                npm install
+          - task: Bash@3
+            name: node_check
             displayName: "NodeJS - Kód ellenőrzés"
-          - script: |
-              sudo npm install
-                          
-              echo "##[command]A kód rendben?"
-              npm run lint:ejs
-              commandresult=$(echo $?)    
-              echo "##[debug]Kód ellenőrzés eredménye: $commandresult"
-              if [[ $commandresult != 0 ]];then
-                echo "##vso[task.complete result=Failed;]A kódban hiba található!"
-              fi
+            inputs:
+              targetType: "inline"
+              script: |
+                echo "##[command]A kód rendben?"
+                npm run lint:js
+          - task: Bash@3
+            name: ejs_check
             displayName: "EJS - Kód ellenőrzés"
+            inputs:
+              targetType: "inline"
+              script: |
+                echo "##[command]A kód rendben?"
+                npm run lint:ejs
+
