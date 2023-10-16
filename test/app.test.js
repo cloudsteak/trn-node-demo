@@ -13,11 +13,11 @@ describe('Unit test: Nyitó oldal', function () {
             })
     });
 
-    it('Oldalon szerepel az "Azure" szó', function () {
+    it('Oldalon szerepel az "Sipp" szó', function () {
         return request(app)
             .get('/')
             .then(function (response) {
-                expect(response.text).to.contain('Azure');
+                expect(response.text).to.contain('Sipp');
             })
     });
 
