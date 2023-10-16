@@ -22,15 +22,26 @@ stages:
               versionSpec: "18.x"
             displayName: "Install Node.js"
           - script: |
+              ls -l
               sudo npm install
-              sudo npm install eslint  
-              
+                            
               echo "##[command]A kód rendben?"
-              sudo npm run test
+              npm run lint:js
               commandresult=$(echo $?)    
               echo "##[debug]Kód ellenőrzés eredménye: $commandresult"
               if [[ $commandresult != 0 ]];
               then
                 echo "##vso[task.complete result=Failed;]A kódban hiba található!"
               fi
-            displayName: "Kód ellenőrzés"
+            displayName: "NodeJS - Kód ellenőrzés"
+          - script: |
+              sudo npm install
+                          
+              echo "##[command]A kód rendben?"
+              npm run lint:ejs
+              commandresult=$(echo $?)    
+              echo "##[debug]Kód ellenőrzés eredménye: $commandresult"
+              if [[ $commandresult != 0 ]];then
+                echo "##vso[task.complete result=Failed;]A kódban hiba található!"
+              fi
+            displayName: "EJS - Kód ellenőrzés"

@@ -1,0 +1,19 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "plugins": ["node"],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+
+    },
+    "rules": {
+        "node/exports-style": ["error", "module.exports"],
+        "node/no-unsupported-features/es-builtins": "error",
+        "node/no-unsupported-features/es-syntax": "error",
+        "node/no-unsupported-features/node-builtins": "error"
+    }
+}

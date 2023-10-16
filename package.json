@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "test": "eslint ./app.js",
+    "lint:js": "npx eslint .",
+    "lint:ejs": "npx ejslint **/*.ejs",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -15,6 +16,10 @@
     "morgan": "~1.10.0"
   },
   "devDependencies": {
-    "eslint": "^8.51.0"
+    "ejs-lint": "^2.0.0",
+    "eslint": "^8.51.0",
+    "eslint-plugin-ejs": "^0.0.2",
+    "eslint-plugin-ejs-js": "^0.1.0",
+    "eslint-plugin-node": "^11.1.0"
   }
 }
