@@ -4,8 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var app = express();
+var os = require('os');
+var hostname = os.hostname();
 
+var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 /* Kezdőlap */
 app.get('/', function (req, res) {
   const NodeVersion = process.versions;
-  res.render('index', { data: { nodeVerison: NodeVersion.node, title: 'Azure Webapp példa alkalmazás' } });
+  res.render('index', { data: { nodeVerison: NodeVersion.node, title: 'Azure Webapp példa alkalmazás', host: hostname } });
 });
 
 // catch 404 and forward to error handler

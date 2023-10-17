@@ -72,4 +72,4 @@ stages:
               targetType: "inline"
               script: |
                 echo "##[command]Funkciók rendben?"
-                npx mocha test
+                npm run test
