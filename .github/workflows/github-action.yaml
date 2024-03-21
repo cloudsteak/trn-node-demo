@@ -9,6 +9,7 @@ on:
     branches:
       - "*"
       - "!main"
+      - "!demo"
   pull_request:
     branches:
       - main
