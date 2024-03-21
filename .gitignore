@@ -129,6 +129,9 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+
+**/demo_*.yml
+
 .DS_Store
 
 
