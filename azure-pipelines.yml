@@ -5,6 +5,7 @@
 
 trigger:
   - main
+  - demo
 
 pool:
   vmImage: ubuntu-latest
@@ -18,9 +19,9 @@ stages:
         displayName: Kód ellenőrzés
         steps:
           - task: NodeTool@0
-            displayName: "NodeJs 18 telepítés"
+            displayName: "NodeJs 20 telepítés"
             inputs:
-              versionSpec: "18.x"
+              versionSpec: "20.x"
           - task: Bash@3
             name: install_dependencies
             displayName: Függőségek teleptése
@@ -54,9 +55,9 @@ stages:
         displayName: Funkció ellenőrzés
         steps:
           - task: NodeTool@0
-            displayName: "NodeJs 18 telepítés"
+            displayName: "NodeJs 20 telepítés"
             inputs:
-              versionSpec: "18.x"
+              versionSpec: "20.x"
           - task: Bash@3
             name: install_dependencies
             displayName: Függőségek teleptése
