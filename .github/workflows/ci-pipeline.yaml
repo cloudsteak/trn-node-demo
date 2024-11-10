@@ -25,13 +25,19 @@ jobs:
     name: Kód és funkció ellenőrzés
     if: github.event_name == 'pull_request'
     steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js
+      - name: Kód letöltés
+        uses: actions/checkout@v4
+      - name: Node.js beállítás
         uses: actions/setup-node@v3
         with:
           node-version: "20.x"
-      - run: npm upgrade
-      - run: npm install
-      - run: npm run lint:js
-      - run: npm run lint:ejs
-      - run: npm run test
+      - name: Node - Csomagkezelő frissítés
+        run: npm upgrade
+      - name: Node - Függőségek telepítése
+        run: npm install
+      - name: Node - js fájlok ellenőrzése
+        run: npm run lint:js
+      - name: Node - ejs fájlok ellenőrzése
+        run: npm run lint:ejs
+      - name: Node - Tesztesetek futtatása
+        run: npm run test
