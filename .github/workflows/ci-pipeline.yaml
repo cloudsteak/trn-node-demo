@@ -39,5 +39,5 @@ jobs:
         run: npm run lint:js
       - name: Node - 'ejs' fájlok ellenőrzése
         run: npm run lint:ejs
-      - name: Node - Tesztesetek futtatása
+      - name: Node - Funkcionális tesztek
         run: npm run test
