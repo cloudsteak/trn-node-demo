@@ -6,7 +6,6 @@ on:
       - unlabeled
       - synchronize
       - opened
-      - edited
       - ready_for_review
       - reopened
       - unlocked
