@@ -35,9 +35,9 @@ jobs:
         run: npm upgrade
       - name: Node - Függőségek telepítése
         run: npm install
-      - name: Node - js fájlok ellenőrzése
+      - name: Node - 'js' fájlok ellenőrzése
         run: npm run lint:js
-      - name: Node - ejs fájlok ellenőrzése
+      - name: Node - 'ejs' fájlok ellenőrzése
         run: npm run lint:ejs
       - name: Node - Tesztesetek futtatása
         run: npm run test
