@@ -3,6 +3,7 @@
 
 - Node 18 LTS
 - Node 20 LTS
+- Node 22 LTS
 
 ## Kapcsolódó projekt
 
@@ -24,12 +25,6 @@ Kézzel is futtatható a teszt:
 
 ```bash
 npm run test
-```
-
-vagy 
-
-```bash
-eslint ./app.js
 ```
 
 ## Azure Pipeline létrehozás és kapcsolat GitHub-al
