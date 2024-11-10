@@ -1,4 +1,4 @@
-name: automerge
+name: Automatikus összefűzés
 on:
   pull_request:
     types:
