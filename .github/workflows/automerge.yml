@@ -1,4 +1,4 @@
-name: automerge
+name: Automatikus összefűzés
 on:
   pull_request:
     types:
@@ -6,7 +6,6 @@ on:
       - unlabeled
       - synchronize
       - opened
-      - edited
       - ready_for_review
       - reopened
       - unlocked
