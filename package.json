@@ -25,6 +25,7 @@
     "eslint-plugin-ejs-js": "^0.1.0",
     "eslint-plugin-html": "^8.1.2",
     "eslint-plugin-node": "^11.1.0",
+    "htmlhint": "^1.1.4",
     "mocha": "^10.8.2",
     "supertest": "^7.0.0"
   }
