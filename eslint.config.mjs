@@ -18,7 +18,7 @@ export default [
       "array-bracket-spacing": ["error", "never"],
       "prefer-arrow-callback": "error",
       "no-duplicate-imports": "error",
-      "no-restricted-imports": ["error", { "patterns": ["../*"] }],
+      "no-restricted-imports": "off",
       "no-async-promise-executor": "error",
       "no-await-in-loop": "warn",
       "consistent-return": "error",
