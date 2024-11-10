@@ -1,11 +1,12 @@
 {
   "name": "node-demo",
-  "version": "1.1.0",
+  "version": "1.1.1",
+  "type": "module",
   "private": true,
   "scripts": {
     "lint:js": "npx eslint .",
     "lint:ejs": "npx ejslint **/*.ejs",
-    "test": "npx mocha test",
+    "test": "npx mocha test/*.mjs",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -22,6 +23,7 @@
     "eslint": "^9.14.0",
     "eslint-plugin-ejs": "^0.0.2",
     "eslint-plugin-ejs-js": "^0.1.0",
+    "eslint-plugin-html": "^8.1.2",
     "eslint-plugin-node": "^11.1.0",
     "mocha": "^10.8.2",
     "supertest": "^7.0.0"
