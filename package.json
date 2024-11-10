@@ -1,11 +1,12 @@
 {
   "name": "node-demo",
-  "version": "1.1.0",
+  "version": "1.1.1",
+  "type": "module",
   "private": true,
   "scripts": {
     "lint:js": "npx eslint .",
     "lint:ejs": "npx ejslint **/*.ejs",
-    "test": "npx mocha test",
+    "test": "npx mocha test/*.mjs",
     "start": "node ./bin/www"
   },
   "dependencies": {

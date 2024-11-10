@@ -20,7 +20,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     name: Kód és funkció ellenőrzés
     if: github.event_name == 'pull_request'
