@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "lint:js": "npx eslint .",
-    "lint:ejs": "npx ejslint **/*.ejs",
+    "lint:ejs": "npx ejslint \"**/*.ejs\"",
     "lint:html": "npx htmlhint views/**/*.ejs",
     "test": "npx mocha test/*.mjs",
     "start": "node ./bin/www"
