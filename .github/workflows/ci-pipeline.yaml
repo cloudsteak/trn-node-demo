@@ -16,7 +16,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     name: Kód és funkció ellenőrzés
-    if: github.event_name == 'pull_request'
     steps:
       - run: echo "${{ github.event_name }}"
       - name: Kód letöltés
