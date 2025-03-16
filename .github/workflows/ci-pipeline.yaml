@@ -16,9 +16,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     name: Kód és funkció ellenőrzés
+    if: github.event_name == 'pull_request'
     steps:
       - name: Kód letöltés
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Node.js beállítás
         uses: actions/setup-node@v3
         with:
