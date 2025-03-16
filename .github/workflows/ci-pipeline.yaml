@@ -16,6 +16,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     name: Kód és funkció ellenőrzés
+    if: github.event_name == 'pull_request'
     steps:
       - name: Kód letöltés
         uses: actions/checkout@v4
