@@ -61,4 +61,4 @@ jobs:
           app-name: 'kisstibor-webapp'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9C6FC6F21725481BB33BAAF0A6CC3715 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1725EA0542864F6B820495060A1B3B61 }}
