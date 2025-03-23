@@ -21,7 +21,7 @@ app.use(express.static(path.join(path.dirname(new URL(import.meta.url).pathname)
 /* Kezdőlap */
 app.get('/', (req, res) => {
   const NodeVersion = process.versions;
-  res.render('index', { data: { nodeVerison: NodeVersion.node, title: '---- Azure Webalkalmazás 2025 0323 újra----', host: hostname } });
+  res.render('index', { data: { nodeVerison: NodeVersion.node, title: '---- Azure Webalkalmazás 2025 0323 újra rossz volt a reposo----', host: hostname } });
 });
 
 // catch 404 and forward to error handler
