@@ -8,7 +8,8 @@
     "lint:ejs": "npx ejslint \"**/*.ejs\"",
     "lint:html": "npx htmlhint views/**/*.ejs",
     "test": "npx mocha test/*.mjs",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "build": "echo \"No build step defined\""
   },
   "dependencies": {
     "cookie-parser": "~1.4.7",
