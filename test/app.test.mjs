@@ -14,11 +14,11 @@ describe('Unit test: Nyitó oldal', () => {
       });
   });
 
-  it('Oldalon szerepel az "Azure" szó', () => {
+  it('Oldalon szerepel az "felhő" szó', () => {
     return request(app)
       .get('/')
       .then((response) => {
-        expect(response.text).to.contain('Azure');
+        expect(response.text).to.contain('felhő');
       });
   });
 });
