@@ -1,0 +1,11 @@
+version: 1.0
+runtime: nodejs22
+build:
+  commands:
+    build:
+      - npm ci --omit=dev # ha van package-lock.json
+      # - npm install --production   # ha nincs lockfile
+run:
+  command: npm start # package.json: "start": "node ./bin/www"
+  network:
+    port: 3000
