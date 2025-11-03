@@ -22,7 +22,7 @@
   "devDependencies": {
     "chai": "^6.2.0",
     "ejs-lint": "^2.0.0",
-    "eslint": "^9.37.0",
+    "eslint": "^9.39.0",
     "eslint-plugin-ejs": "^0.0.2",
     "eslint-plugin-ejs-js": "^0.1.0",
     "eslint-plugin-html": "^8.1.3",
