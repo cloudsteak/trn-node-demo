@@ -6,14 +6,23 @@ name: CI (continuous integration)
 on:
   # Összefűzési kérés indítása az alábbi branch-ekre
   pull_request_target:
-    types: [opened, synchronize, reopened, ready_for_review, labeled, unlabeled, edited]
+    types:
+      [
+        opened,
+        synchronize,
+        reopened,
+        ready_for_review,
+        labeled,
+        unlabeled,
+        edited,
+      ]
     branches:
       - main
       - demo
 
 # Feladatok
 jobs:
-  test:
+  ci-test:
     runs-on: ubuntu-latest
     name: Kód és funkció ellenőrzés
     steps:
@@ -26,15 +35,27 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "22.x"
-      - name: Node - Csomagkezelő frissítés
-        run: npm upgrade
-      - name: Node - Függőségek telepítése
-        run: npm install
-      - name: Node - 'js' fájlok ellenőrzése
-        run: npm run lint:js
-      - name: Node - 'ejs' fájlok ellenőrzése
-        run: npm run lint:ejs
-      - name: Node - 'html' kód ellenőrzése
-        run: npm run lint:html
-      - name: Node - Funkcionális tesztek
-        run: npm run test
+      - name: Csomagkezelő frissítés
+        run: |
+          # Csomagkezelő frissítése parancssori eszközzel
+          npm upgrade
+      - name: Függőségek telepítése
+        run: |
+          # Függőségek telepítése npm-mel
+          npm install
+      - name: JS fájlok ellenőrzése
+        run: |
+          # JS fájlok ellenőrzése lint segítségével
+          npm run lint:js
+      - name: EJS fájlok ellenőrzése
+        run: |
+          # EJS fájlok ellenőrzése lint segítségével
+          npm run lint:ejs
+      - name: HTML kód ellenőrzése
+        run: |
+          # HTML kód ellenőrzése lint segítségével
+          npm run lint:html
+      - name: Funkcionális tesztek
+        run: |
+          # Funkcionális tesztek futtatása
+          npm run test
