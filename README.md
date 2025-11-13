@@ -57,3 +57,4 @@ npm run test
 15. Létező YAML esetén a Run gomb melletti nyilra kattins és válaszd a "Save" lehetőséget.
 16. Várd meg míg a pipeline létrejön. Ezzel a kapcsolt kész.
 17. Ha GitHub-on módosítasz a kódon, akkor a pipeline elindul és a benne lévő kód lefut.
+
