@@ -27,14 +27,14 @@ jobs:
     name: Kód és funkció ellenőrzés
     steps:
       - name: Kód letöltés
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Node.js beállítás
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
-          node-version: "22.x"
+          node-version: "24.x"
       - name: Csomagkezelő frissítés
         run: |
           # Csomagkezelő frissítése parancssori eszközzel
