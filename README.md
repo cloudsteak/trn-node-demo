@@ -3,7 +3,7 @@
 
 - Node 20 LTS
 - Node 22 LTS
-- Node 24 Current
+- Node 24 LTS
 
 ## Kapcsolódó projekt
 
