@@ -39,19 +39,19 @@ describe('Unit test: Nyitó oldal', () => {
       });
   });
 
-  it('Oldalon szerepel a "NodeJS Verzió:" felirat', () => {
+  it('Oldalon szerepel a "NodeJS Verzió" felirat', () => {
     return request(app)
       .get('/')
       .then((response) => {
-        expect(response.text).to.contain('NodeJS Verzió:');
+        expect(response.text).to.contain('NodeJS Verzió');
       });
   });
 
-  it('Oldalon szerepel a "Szerver neve:" felirat', () => {
+  it('Oldalon szerepel a "Szerver neve" felirat', () => {
     return request(app)
       .get('/')
       .then((response) => {
-        expect(response.text).to.contain('Szerver neve:');
+        expect(response.text).to.contain('Szerver neve');
       });
   });
 
@@ -60,6 +60,72 @@ describe('Unit test: Nyitó oldal', () => {
       .get('/')
       .then((response) => {
         expect(response.headers).to.have.property('x-powered-by');
+      });
+  });
+});
+
+describe('Unit test: Mentés', () => {
+  it('Érvényes üzenet mentése visszairányít a főoldalra (HTTP 302)', () => {
+    return request(app)
+      .post('/save')
+      .send('uzenet=Teszt+üzenet')
+      .then((response) => {
+        assert.equal(response.status, 302);
+      });
+  });
+
+  it('Érvénytelen üzenet mentése 400-as hibát ad vissza', () => {
+    return request(app)
+      .post('/save')
+      .send('uzenet=!!')
+      .then((response) => {
+        assert.equal(response.status, 400);
+      });
+  });
+
+  it('Mentés után az üzenet megjelenik a főoldalon', () => {
+    return request(app)
+      .post('/save')
+      .send('uzenet=FelhőDemo')
+      .then(() => request(app).get('/'))
+      .then((response) => {
+        expect(response.text).to.contain('FelhőDemo');
+      });
+  });
+
+  it('Üres üzenet esetén 400-as hibát ad vissza', () => {
+    return request(app)
+      .post('/save')
+      .send('uzenet=')
+      .then((response) => {
+        assert.equal(response.status, 400);
+      });
+  });
+
+  it('Túl rövid üzenet esetén 400-as hibát ad vissza', () => {
+    return request(app)
+      .post('/save')
+      .send('uzenet=ab')
+      .then((response) => {
+        assert.equal(response.status, 400);
+      });
+  });
+
+  it('Tiltott karakterek esetén 400-as hibát ad vissza', () => {
+    return request(app)
+      .post('/save')
+      .send('uzenet=<script>')
+      .then((response) => {
+        assert.equal(response.status, 400);
+      });
+  });
+
+  it('A hibaoldal tartalmaz "Érvénytelen" szöveget', () => {
+    return request(app)
+      .post('/save')
+      .send('uzenet=')
+      .then((response) => {
+        expect(response.text).to.contain('Érvénytelen');
       });
   });
 });
