@@ -3,6 +3,9 @@
   "version": "1.1.1",
   "type": "module",
   "private": true,
+  "engines": {
+    "node": ">=24.22.1"
+  },
   "scripts": {
     "lint:js": "npx eslint .",
     "lint:ejs": "npx ejslint \"**/*.ejs\"",
@@ -20,7 +23,9 @@
     "morgan": "~1.12.1"
   },
   "overrides": {
-    "serialize-javascript": "^7.1.4"
+    "serialize-javascript": "^7.1.4",
+    "glob": "^14.0.4",
+    "minimatch": "^11.0.5"
   },
   "devDependencies": {
     "chai": "^6.3.0",
