@@ -20,6 +20,27 @@ A megoldás "Embedded JavaScript templating"-re épül. https://ejs.co
 https://ejs.co/#install
 
 
+## Helyi futtatás
+
+Node.js 24.22.1 vagy újabb kell. Ellenőrizd a verziót:
+
+```bash
+node -v
+```
+
+A projekt mappájában telepítsd a függőségeket, majd indítsd az alkalmazást:
+
+```bash
+npm install
+npm start
+```
+
+A szerver a [http://localhost:3000](http://localhost:3000) címen érhető el. Más portot a `PORT` környezeti változóval adhatsz meg:
+
+```bash
+PORT=8080 npm start
+```
+
 ## Teszt lépések
 
 **[eslint](https://eslint.org/)** tesztelés előkészítve.
