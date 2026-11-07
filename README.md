@@ -1,9 +1,7 @@
 # NodeJS alapú webalkalmazás Azure-hoz
 ## Támogatott NodeJS verziók
 
-- Node 20 LTS
-- Node 22 LTS
-- Node 24 LTS
+- Node.js 24.22.1 vagy újabb
 
 ## Kapcsolódó projekt
 
