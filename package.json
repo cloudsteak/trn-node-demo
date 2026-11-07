@@ -23,18 +23,20 @@
     "morgan": "~1.12.1"
   },
   "overrides": {
-    "serialize-javascript": "^7.1.4"
+    "serialize-javascript": "^7.1.4",
+    "glob": "^14.0.4",
+    "minimatch": "^11.0.5"
   },
   "devDependencies": {
     "chai": "^6.3.0",
     "ejs-lint": "^2.0.0",
-    "eslint": "^9.39.5",
+    "eslint": "^10.12.0",
     "eslint-plugin-ejs": "^0.0.2",
     "eslint-plugin-ejs-js": "^0.1.0",
     "eslint-plugin-html": "^8.2.1",
     "eslint-plugin-node": "^11.1.0",
-    "htmlhint": "^1.7.0",
-    "mocha": "^11.4.0",
+    "htmlhint": "^1.9.2",
+    "mocha": "^12.0.3",
     "supertest": "^7.3.1"
   }
 }
